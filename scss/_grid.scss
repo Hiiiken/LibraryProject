@@ -1,11 +1,16 @@
 //Base unit used for spacing gutters
-$base-unit:8px;
+$base-unit: 12px;
 
 //Screen Sizes
 $screen-sm: 480px;
 $screen-md: 624px;
 $screen-lg: 744px;
 $screen-xl: 1200px;
+
+
+html {
+   box-sizing: border-box;
+}
 
 *,
 *:before,
@@ -20,39 +25,49 @@ $screen-xl: 1200px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-left: $base-unit;
+   padding-right: $base-unit;
 
-    @media only screen and (max-width: $screen-xl) {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+   @media only screen and (max-width: $screen-xl) {
+      padding-left: $base-unit * 2;
+      padding-right: $base-unit * 2;
+   }
+}
+
+.container-fl {
+   width: 100%;
+   padding-left: $base-unit;
+   padding-right: $base-unit;
+
+   
 }
 
 ////////////////////////
 //The Flex Grid
 ////////////////////////
 .grid {
-    box-sizing: border-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    -webkit-box-flex: 0;
-    flex: 0 1 auto;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 ($base-unit * -1) 0 ($base-unit * -1);
+   box-sizing: border-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: -webkit-box;
+   display: flex;
+   -webkit-flex: 0 1 auto;
+   -ms-flex: 0 1 auto;
+   -webkit-box-flex: 0;
+   flex: 0 1 auto;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   margin: 0 ($base-unit * -1) 0 ($base-unit * -1);
+
+   //  margin: 0 $base-unit 0 $base-unit;
     //Use this modifier to remove gutters
     &.grid-nogutter {
         margin: 0;

@@ -1,35 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library App</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Library App</title>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>My Books</h1>
-        <div class="grid">
-            <div class="col">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, tempore.</p>
+   <div class="container-fl">
+      <div class="grid">
+         <div class="col col-3">
+            <div class="sidebar"> 
+               <div class="sidebar-widget">
+                  <h2 class="sec-title">Add a new book</h2>
+                  <div class="form">
+                     <input type="text" id="title" placeholder="Title" required>
+                     <input type="text" id="author" placeholder="Author" required>
+                     <input type="number" id="pages" placeholder="Number of Pages" required>
+                     <select name="read" id="read" required>
+                        <option value="" disabled selected>Select book status</option>
+                        <option value="Read">Read</option>
+                        <option value="Not Read">Not Read</option>
+                     </select>
+                     <button type="submit" class="btn btn-submit" id="submit">New Book</button>
+                  </div>
+               </div>
+
+               <div class="sidebar-widget">
+                  <h2 class="sec-title">Library log</h2>
+                  <div class="library-log">
+                     <div class="library-log--single">
+                        <img src="images/book-mark.svg" alt="books icon">
+                        <h4>Total books : <span>17</span></h4>
+                     </div>
+                     <div class="library-log--single">
+                        <img src="images/check.svg" alt="books icon">
+                        <h4>Books read : <span>7</span></h4>
+                     </div>
+                     <div class="library-log--single">
+                        <img src="images/x.svg" alt="books icon">
+                        <h4>Books not read : <span>10</span></h4>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="col">
-                <p>Possimus rem optio asperiores explicabo omnis natus vero nam totam!</p>
+         </div>
+         <div class="col col-9">
+            <div class="main-content">
+               <h1 class="sec-title">My Books</h1>
+               <!-- <ul class="books-list">
+                  <li class="book-col">
+                     <div class="book-card">
+                        <h4 class="title">Harry Potter</h4>
+                        <p class="author">J K Rowling</p>
+                        <p class="pages">800</p>
+                        <p class="status">Read</p>
+                        <button class="btn btn-edit">Edit</button>
+                        <button class="btn btn-delete">Delete</button>
+                     </div>
+                  </li>
+               </ul> -->
+               <div class="book-list">
+                  <div class="grid">
+                     <div class="col col-3 col-lg">
+                        <div class="book-card">
+                           <h4 class="title">Harry Potter</h4>
+                           <p class="author">J K Rowling</p>
+                           <p class="pages">800</p>
+                           <p class="status status--read">Read</p>
+                           <button class="btn btn-edit">Edit</button>
+                           <button class="btn btn-delete">Delete</button>
+                        </div>
+                     </div>
+                     <div class="col col-3 col-lg">
+                        <div class="book-card">
+                           <h4 class="title">Harry Potter</h4>
+                           <p class="author">J K Rowling</p>
+                           <p class="pages">800</p>
+                           <p class="status">Not read</p>
+                           <button class="btn btn-edit">Edit</button>
+                           <button class="btn btn-delete">Delete</button>
+                        </div>
+                     </div>
+                     <div class="col col-3 col-lg">
+                        <div class="book-card">
+                           <h4 class="title">Harry Potter</h4>
+                           <p class="author">J K Rowling</p>
+                           <p class="pages">800</p>
+                           <p class="status">Not read</p>
+                           <button class="btn btn-edit">Edit</button>
+                           <button class="btn btn-delete">Delete</button>
+                        </div>
+                     </div>
+                     <div class="col col-3 col-lg">
+                        <div class="book-card">
+                           <h4 class="title">Harry Potter</h4>
+                           <p class="author">J K Rowling</p>
+                           <p class="pages">800</p>
+                           <p class="status status--read">Read</p>
+                           <button class="btn btn-edit">Edit</button>
+                           <button class="btn btn-delete">Delete</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="col">
-                <p>Magni ipsum porro eligendi similique illo nisi officiis optio magnam.</p>
-            </div>
-            <div class="col">
-                <p>Ducimus odio assumenda voluptates vitae eos, praesentium placeat voluptas saepe!</p>
-            </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
+    
 
     
 
-    <!-- SCRIPTS -->
-	<script src="js/app.js"></script>
+    
+
+   <!-- SCRIPTS -->
+   <script src="js/app.js"></script>
 </body>
 </html>

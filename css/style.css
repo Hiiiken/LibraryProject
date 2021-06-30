@@ -1,3 +1,6 @@
+html {
+  box-sizing: border-box; }
+
 *,
 *:before,
 *:after {
@@ -11,12 +14,17 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px; }
+  padding-left: 12px;
+  padding-right: 12px; }
   @media only screen and (max-width: 1200px) {
     .container {
-      padding-left: 30px;
-      padding-right: 30px; } }
+      padding-left: 24px;
+      padding-right: 24px; } }
+
+.container-fl {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px; }
 
 .grid {
   box-sizing: border-box;
@@ -36,7 +44,7 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 -8px 0 -8px; }
+  margin: 0 -12px 0 -12px; }
   .grid.grid-nogutter {
     margin: 0; }
     .grid.grid-nogutter > .col {
@@ -56,7 +64,7 @@
   flex-basis: 0;
   max-width: 100%;
   min-width: 0;
-  padding: 0 8px 0 8px; }
+  padding: 0 12px 0 12px; }
 
 .col-align-top {
   -webkit-align-self: flex-start;
@@ -246,4 +254,152 @@
     max-width: 100%; } }
 
 body {
-  background: #eee; }
+  font-family: 'Nunito Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #eef2f7; }
+
+p, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #98a6ad; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #98a6ad; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #98a6ad; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #98a6ad; }
+
+.sidebar {
+  background-color: #313a46;
+  height: 100vh;
+  padding: 50px 40px;
+  margin-left: -12px; }
+  .sidebar h2 {
+    color: #fff; }
+  .sidebar .sidebar-widget {
+    margin-bottom: 50px; }
+
+input {
+  width: 100%;
+  outline: none;
+  height: 42px;
+  padding-left: 15px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  font-weight: 500; }
+  input:focus {
+    background-color: #f8f8f8; }
+
+select {
+  width: 100%;
+  outline: none;
+  height: 42px;
+  padding-left: 15px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  font-weight: 500; }
+
+button[type=submit] {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #39afd1;
+  transition: .3s all; }
+  button[type=submit]:hover {
+    background-color: #198cac;
+    cursor: pointer; }
+
+.sec-title {
+  font-size: 26px;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  font-weight: 600; }
+
+.library-log {
+  background-color: #404853;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+  color: #fff; }
+  .library-log .library-log--single {
+    display: flex;
+    align-items: center; }
+    .library-log .library-log--single img {
+      width: 32px;
+      vertical-align: middle;
+      margin-right: 10px; }
+    .library-log .library-log--single h4 {
+      font-weight: 500;
+      line-height: 1.5em;
+      text-transform: uppercase;
+      font-size: 14px; }
+    .library-log .library-log--single span {
+      font-weight: 400;
+      color: #39afd1; }
+
+.main-content {
+  padding: 50px 40px; }
+  .main-content .book-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px; }
+    .main-content .book-card .title {
+      color: #6c757d;
+      font-size: 18px;
+      line-height: 1.5em;
+      margin-bottom: 5px; }
+    .main-content .book-card .author, .main-content .book-card .pages, .main-content .book-card .status {
+      color: #98a6ad;
+      font-size: 16px;
+      line-height: 1.5em; }
+    .main-content .book-card .status.status--read {
+      color: #39afd1; }
+    .main-content .book-card .btn {
+      margin-top: 10px;
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 14px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      color: #6c757d; }
+      .main-content .book-card .btn.btn-delete {
+        color: #fa5c7c;
+        margin-left: 10px; }
+        .main-content .book-card .btn.btn-delete:hover {
+          color: #f72e56; }
+      .main-content .book-card .btn.btn-edit:hover {
+        color: #000; }

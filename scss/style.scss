@@ -2,5 +2,218 @@
 @import 'grid';
 
 body {
-    background: #eee;
+   font-family: 'Nunito Sans', sans-serif;
+   padding: 0;
+   margin: 0;
+   background-color: #eef2f7;
 }
+
+p, h1, h2, h3, h4 {
+   margin: 0;
+   padding: 0;
+}
+
+// PLACEHOLDER STYLES
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #98a6ad;
+}
+::-moz-placeholder { /* Firefox 19+ */
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #98a6ad;;
+}
+:-ms-input-placeholder { /* IE 10+ */
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #98a6ad;;
+}
+:-moz-placeholder { /* Firefox 18- */
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #98a6ad;;
+}
+
+.sidebar {
+   background-color: #313a46;
+   height: 100vh;
+   padding: 50px 40px;
+   margin-left: $base-unit * -1;
+
+   h2 {
+      color: #fff;
+   }
+
+   .sidebar-widget {
+      margin-bottom: 50px;
+   }
+}
+
+input {
+   width: 100%;
+   outline: none;
+   height: 42px;
+   padding-left: 15px;
+   border: 1px solid transparent;
+   margin-bottom: 20px;
+   border-radius: 0;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #000;
+   font-weight: 500;
+
+   &:focus {
+      background-color: #f8f8f8;
+   }
+}
+
+select {
+   width: 100%;
+   outline: none;
+   height: 42px;
+   padding-left: 15px;
+   border: 1px solid transparent;
+   margin-bottom: 20px;
+   border-radius: 0;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #000;
+   font-weight: 500;
+}
+
+button[type=submit] {
+   width: 100%;
+   height: 42px;
+   border: none;
+   border-radius: 0;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 14px;
+   color: #fff;
+   font-weight: 600;
+   background-color: #39afd1;
+   transition: .3s all;
+
+   &:hover {
+      background-color: #198cac;
+      cursor: pointer;
+   }
+}
+
+.sec-title {
+   font-size: 26px;
+   line-height: 1.3em;
+   margin-bottom: 20px;
+   font-weight: 600;
+}
+
+.library-log  {
+   background-color: #404853;
+   padding: 20px;
+   border-radius: 5px;
+   text-align: left;
+   color: #fff;
+
+   .library-log--single {
+      display: flex;
+      align-items: center;
+
+      img {
+         width: 32px;
+         vertical-align: middle;
+         margin-right: 10px;
+      }
+
+      h4 {
+         font-weight: 500;
+         line-height: 1.5em;
+         text-transform: uppercase;
+         font-size: 14px;
+      }
+
+      span {
+         font-weight: 400;
+         color: #39afd1;
+      }
+   }
+}
+
+.main-content {
+   padding: 50px 40px;
+
+   .book-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+
+      .title {
+         color: #6c757d;
+         font-size: 18px;
+         line-height: 1.5em;
+         margin-bottom: 5px;
+      }
+
+      .author, .pages, .status {
+         color: #98a6ad;
+         font-size: 16px;
+         line-height: 1.5em;
+      }
+
+      .status.status--read {
+         color: #39afd1;
+      }
+
+      .btn {
+         margin-top: 10px;
+         background: transparent;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 0;
+         font-size: 14px;
+         font-family: 'Nunito Sans', sans-serif;
+         font-weight: 600;
+         color: #6c757d;
+
+         &.btn-delete {
+            color: #fa5c7c;
+            margin-left: 10px;
+
+            &:hover {
+               color: #f72e56
+            }
+         }
+
+         &.btn-edit:hover {
+            color: #000;
+         }
+      }
+   }
+
+   // .books-list {
+   //    list-style: none;
+   //    padding: 0;
+   //    margin: 0;
+   //    width: 100%;
+   //    display: flex;
+   //    box-sizing: border-box;
+   //    flex-wrap: wrap;
+   // }
+
+   // .book-col {
+   //    box-sizing: border-box;
+   //    flex: 0 0 auto;
+   //    flex-grow: 1;
+   //    min-width: 0;
+   //    padding: 0 12px 0 12px;
+   //    flex-basis: 25%;
+   //    max-width: 25%;
+   // }
+
+   // .book-card {
+   //    background-color: #fff;
+   //    margin-bottom: 20px;
+   // }
+}
+
+
