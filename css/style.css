@@ -373,7 +373,8 @@ button[type=submit] {
   .main-content .book-card {
     background: #fff;
     padding: 20px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 1px 1px 50px 1px rgba(154, 161, 171, 0.15); }
     .main-content .book-card .title {
       color: #6c757d;
       font-size: 18px;
