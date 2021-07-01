@@ -253,6 +253,11 @@ html {
     flex: 100%;
     max-width: 100%; } }
 
+@media only screen and (max-width: 1200px) {
+  .col-xl {
+    flex: 100%;
+    max-width: 100%; } }
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   padding: 0;
@@ -291,16 +296,36 @@ p, h1, h2, h3, h4 {
   background-color: #313a46;
   height: 100vh;
   padding: 50px 40px;
-  margin-left: -12px; }
+  margin-left: -12px;
+  margin-right: -12px; }
   .sidebar h2 {
     color: #fff; }
   .sidebar .sidebar-widget {
     margin-bottom: 50px; }
+  @media only screen and (max-width: 1200px) {
+    .sidebar {
+      height: auto;
+      display: flex;
+      justify-content: space-between; }
+      .sidebar .sidebar-widget {
+        width: 100%;
+        margin-bottom: 0; }
+      .sidebar .widget-library-log {
+        margin-left: 24px; } }
+  @media only screen and (max-width: 624px) {
+    .sidebar {
+      display: block; }
+      .sidebar .widget-library-log {
+        margin-left: 0;
+        margin-top: 30px; } }
+  @media only screen and (max-width: 480px) {
+    .sidebar {
+      padding: 30px 30px; } }
 
 input {
   width: 100%;
   outline: none;
-  height: 42px;
+  height: 46px;
   padding-left: 15px;
   border: 1px solid transparent;
   margin-bottom: 20px;
@@ -315,8 +340,8 @@ input {
 select {
   width: 100%;
   outline: none;
-  height: 42px;
-  padding-left: 15px;
+  height: 46px;
+  padding-left: 10px;
   border: 1px solid transparent;
   margin-bottom: 20px;
   border-radius: 0;
@@ -327,17 +352,17 @@ select {
 
 button[type=submit] {
   width: 100%;
-  height: 42px;
+  height: 46px;
   border: none;
   border-radius: 0;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
   color: #fff;
   font-weight: 600;
-  background-color: #39afd1;
+  background-color: #03b5e6;
   transition: .3s all; }
   button[type=submit]:hover {
-    background-color: #198cac;
+    background-color: #00a3d0;
     cursor: pointer; }
 
 .sec-title {
@@ -366,15 +391,18 @@ button[type=submit] {
       font-size: 14px; }
     .library-log .library-log--single span {
       font-weight: 400;
-      color: #39afd1; }
+      color: #03b5e6; }
 
 .main-content {
-  padding: 50px 40px; }
+  padding: 50px 40px;
+  margin-left: -12px;
+  margin-right: -12px; }
   .main-content .book-card {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 1px 1px 50px 1px rgba(154, 161, 171, 0.15); }
+    box-shadow: 1px 1px 50px 1px rgba(154, 161, 171, 0.15);
+    margin-bottom: 24px; }
     .main-content .book-card .title {
       color: #6c757d;
       font-size: 18px;
@@ -385,7 +413,7 @@ button[type=submit] {
       font-size: 16px;
       line-height: 1.5em; }
     .main-content .book-card .status.status--read {
-      color: #39afd1; }
+      color: #03b5e6; }
     .main-content .book-card .btn {
       margin-top: 10px;
       background: transparent;
@@ -399,8 +427,18 @@ button[type=submit] {
       color: #6c757d; }
       .main-content .book-card .btn.btn-delete {
         color: #fa5c7c;
-        margin-left: 10px; }
+        margin-left: 10px;
+        background: url(/images/delete.svg) no-repeat;
+        padding: 0 0 0 24px; }
         .main-content .book-card .btn.btn-delete:hover {
-          color: #f72e56; }
-      .main-content .book-card .btn.btn-edit:hover {
-        color: #000; }
+          color: #f72e56;
+          opacity: .9; }
+      .main-content .book-card .btn.btn-edit {
+        background: url(/images/pen.svg) no-repeat;
+        padding: 0 0 0 24px; }
+        .main-content .book-card .btn.btn-edit.btn-edit:hover {
+          color: #000;
+          opacity: .9; }
+  @media only screen and (max-width: 480px) {
+    .main-content {
+      padding: 30px 30px; } }

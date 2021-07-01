@@ -11,24 +11,23 @@
 <body>
    <div class="container-fl">
       <div class="grid">
-         <div class="col col-3">
+         <div class="col col-3 col-xl">
             <div class="sidebar"> 
                <div class="sidebar-widget">
                   <h2 class="sec-title">Add a new book</h2>
-                  <div class="form">
+                  <div class="add-book-form">
                      <input type="text" id="title" placeholder="Title" required>
                      <input type="text" id="author" placeholder="Author" required>
                      <input type="number" id="pages" placeholder="Number of Pages" required>
                      <select name="read" id="read" required>
-                        <option value="" disabled selected>Select book status</option>
-                        <option value="Read">Read</option>
-                        <option value="Not Read">Not Read</option>
+                        <option value="" disabled selected>Have you read it?</option>
+                        <option value="Read">Yes</option>
+                        <option value="Not Read">No</option>
                      </select>
                      <button type="submit" class="btn btn-submit" id="submit">New Book</button>
                   </div>
                </div>
-
-               <div class="sidebar-widget">
+               <div class="sidebar-widget widget-library-log">
                   <h2 class="sec-title">Library log</h2>
                   <div class="library-log">
                      <div class="library-log--single">
@@ -47,24 +46,12 @@
                </div>
             </div>
          </div>
-         <div class="col col-9">
+         <div class="col col-9 col-xl">
             <div class="main-content">
                <h1 class="sec-title">My Books</h1>
-               <!-- <ul class="books-list">
-                  <li class="book-col">
-                     <div class="book-card">
-                        <h4 class="title">Harry Potter</h4>
-                        <p class="author">J K Rowling</p>
-                        <p class="pages">800</p>
-                        <p class="status">Read</p>
-                        <button class="btn btn-edit">Edit</button>
-                        <button class="btn btn-delete">Delete</button>
-                     </div>
-                  </li>
-               </ul> -->
                <div class="book-list">
                   <div class="grid">
-                     <div class="col col-3 col-lg">
+                     <div class="col col-4 col-lg">
                         <div class="book-card">
                            <h4 class="title">Harry Potter</h4>
                            <p class="author">J K Rowling</p>
@@ -74,7 +61,7 @@
                            <button class="btn btn-delete">Delete</button>
                         </div>
                      </div>
-                     <div class="col col-3 col-lg">
+                     <div class="col col-4 col-lg">
                         <div class="book-card">
                            <h4 class="title">Harry Potter</h4>
                            <p class="author">J K Rowling</p>
@@ -84,7 +71,7 @@
                            <button class="btn btn-delete">Delete</button>
                         </div>
                      </div>
-                     <div class="col col-3 col-lg">
+                     <div class="col col-4 col-lg">
                         <div class="book-card">
                            <h4 class="title">Harry Potter</h4>
                            <p class="author">J K Rowling</p>
@@ -94,7 +81,17 @@
                            <button class="btn btn-delete">Delete</button>
                         </div>
                      </div>
-                     <div class="col col-3 col-lg">
+                     <div class="col col-4 col-lg">
+                        <div class="book-card">
+                           <h4 class="title">Harry Potter</h4>
+                           <p class="author">J K Rowling</p>
+                           <p class="pages">800</p>
+                           <p class="status status--read">Read</p>
+                           <button class="btn btn-edit">Edit</button>
+                           <button class="btn btn-delete">Delete</button>
+                        </div>
+                     </div>
+                     <div class="col col-4 col-lg">
                         <div class="book-card">
                            <h4 class="title">Harry Potter</h4>
                            <p class="author">J K Rowling</p>

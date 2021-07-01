@@ -9,9 +9,9 @@ const bundleSass = () => {
     .pipe(dest('./css/'));
 };
 
-const devWatch = () => {
+const dev = () => {
     watch('./scss/**/*.scss', bundleSass);
 }
 
 exports.bundleSass = bundleSass;
-exports.devWatch =  devWatch;
+exports.dev =  dev;
