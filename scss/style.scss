@@ -237,4 +237,50 @@ button[type=submit] {
    }
 }
 
+.popup {
+   .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba($color: #000000, $alpha: .7);
+      z-index: 1;
+      display: none;
+   }
 
+   .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background-color: #fff;
+      padding: 30px;
+      z-index: 2;
+   }
+
+   .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      cursor: pointer;
+      font-size: 26px;
+      font-weight: bold;
+      line-height: .5em;
+      color: #98a6ad;
+      transition: all .3s;
+
+      &:hover {
+         color: #000;
+      }
+   }
+
+   &.active .popup-overlay {
+      display: block;
+   }
+
+   &.active .popup-content {
+      transition: all .3s ease-in-out;
+      transform: translate(-50%, -50%) scale(1);
+   }
+}
