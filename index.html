@@ -58,27 +58,7 @@
                            <p class="author">J K Rowling</p>
                            <p class="pages">800</p>
                            <p class="status status--read">Read</p>
-                           <button class="btn btn-edit" id="btn-edit" onclick="togglePopup()" data-popup-target="#popup">Edit</button>
-                           <button class="btn btn-delete">Delete</button>
-                        </div>
-                     </div>
-                     <div class="col col-4 col-lg">
-                        <div class="book-card">
-                           <h4 class="title">Harry Potter</h4>
-                           <p class="author">J K Rowling</p>
-                           <p class="pages">800</p>
-                           <p class="status status--read">Read</p>
-                           <button class="btn btn-edit" id="btn-edit" onclick="togglePopup()" data-popup-target="#popup">Edit</button>
-                           <button class="btn btn-delete">Delete</button>
-                        </div>
-                     </div>
-                     <div class="col col-4 col-lg">
-                        <div class="book-card">
-                           <h4 class="title">Harry Potter</h4>
-                           <p class="author">J K Rowling</p>
-                           <p class="pages">800</p>
-                           <p class="status status--read">Read</p>
-                           <button class="btn btn-edit" id="btn-edit" onclick="togglePopup()" data-popup-target="#popup">Edit</button>
+                           <button class="btn btn-edit" id="btn-edit" data-popup-target="#popup">Edit</button>
                            <button class="btn btn-delete">Delete</button>
                         </div>
                      </div>
@@ -91,31 +71,30 @@
       <div class="popup" id="popup">
          <div class="popup-overlay"></div>
          <div class="popup-content">
-            <div class="popup-close" data-close-popup onclick="togglePopup()">&times;</div>
-            <h3 class="popup-title">Title</h3>
-            <form class="add-book-form" id="add-book-form">
-               <input type="text" id="title" placeholder="Title" name="title" required/>
-               <input type="text" id="author" placeholder="Author" name="author" required/>
-               <input type="number" id="pages" placeholder="Number of Pages" name="pages" required/>
-               <select name="read" id="read" required>
-                  <option value="" disabled selected>Have you read it?</option>
+            <div class="popup-close" data-close-popup>&times;</div>
+            <!-- <h3 class="popup-title">Title</h3> -->
+            <form class="edit-book-form" id="edit-book-form">
+               <input type="text" id="titleEdit" placeholder="Title" name="title" required/>
+               <input type="text" id="authorEdit" placeholder="Author" name="author" required/>
+               <input type="number" id="pagesEdit" placeholder="Number of Pages" name="pages" required/>
+               <select name="read" id="readEdit" required>
+                  <!-- <option value="" disabled selected>Have you read it?</option> -->
                   <option value="Read">Yes</option>
                   <option value="Not Read">No</option>
                </select>
-               <!-- <input type="submit" value="New Book" class="btn btn-submit" id="submit"/> -->
-               <button type="submit" class="btn btn-submit" id="submit">Save</button>
+               <button type="submit" class="btn btn-submit" id="save">Save</button>
             </form>
          </div>
       </div>
 
-      <div class="popup" id="popup">
+      <!-- <div class="popup" id="popup-del">
          <div class="popup-overlay"></div>
          <div class="popup-content">
             <div class="popup-close" data-close-popup onclick="togglePopup()">&times;</div>
-            <h3 class="popup-title">2nd Popup</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, molestias.</p>
+            <h3 class="popup-title">Are you sure you want to delete this?</h3>
+            
          </div>
-      </div>
+      </div> -->
    </div>
     
 

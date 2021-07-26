@@ -41,15 +41,15 @@ function clearForm() {
 let booksList = document.getElementById('books-list-grid');
 function render() {
    booksList.innerHTML = '';
-   myLibrary.forEach((book) => {
+   myLibrary.forEach((book, i) => {
       let htmlBook = `
       <div class="col col-4 col-lg">
-         <div class="book-card">
+         <div class="book-card" id="book-card">
             <h4 class="title">${book.title}</h4>
             <p class="author">${book.author}</p>
             <p class="pages">${book.pages}</p>
             <p class="status">${book.read}</p>
-            <button class="btn btn-edit">Edit</button>
+            <button class="btn btn-edit" data-popup-target="#popup_${i}">Edit</button>
             <button class="btn btn-delete">Delete</button>
          </div>
       </div>
@@ -58,6 +58,30 @@ function render() {
    });
 }
 
+// Button actions
+booksList.addEventListener('click', (event) => {
+   myLibrary.forEach((book) => {
+      if (event.target.tagName === 'BUTTON') {
+         const button = event.target;
+         const card = button.parentNode;
+
+         if (button.textContent === 'Delete') {
+            if (confirm('Are you sure you want to delete this book?') === true) {
+               booksList.removeChild(card.parentNode);
+               myLibrary.splice(book, 1)
+            }
+         } else if (button.textContent === 'Edit') {
+            console.log('clickedit');
+            
+            const title = card.firstElementChild;
+            const popupEditForm = document.getElementById('edit-book-form');
+            const popupEditTitle = popupEditForm.firstElementChild;
+            popupEditTitle.value = title.textContent;
+            togglePopup(popup);
+         }
+      } 
+   })
+})
 
 
 // Popups
