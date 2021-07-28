@@ -461,6 +461,12 @@ button[type=submit] {
   background-color: #fff;
   padding: 30px;
   z-index: 2; }
+  .popup .popup-content form input {
+    border: 1px solid #98a6ad !important; }
+    .popup .popup-content form input:focus {
+      background-color: #eef2f7; }
+  .popup .popup-content form select {
+    border: 1px solid #98a6ad; }
 
 .popup .popup-close {
   position: absolute;

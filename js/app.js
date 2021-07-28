@@ -45,10 +45,10 @@ function render() {
       let htmlBook = `
       <div class="col col-4 col-lg">
          <div class="book-card" id="${i}">
-            <h4 class="title">${book.title}</h4>
-            <p class="author">${book.author}</p>
-            <p class="pages">${book.pages}</p>
-            <p class="status">${book.read}</p>
+            <h4 class="title" id="cardTitle">${book.title}</h4>
+            <p class="author" id="cardAuthor">${book.author}</p>
+            <p class="pages" id="cardPages">${book.pages}</p>
+            <p class="status" id="cardStatus">${book.read}</p>
             <button class="btn btn-edit" data-popup-target="#popup_${i}">Edit</button>
             <button class="btn btn-delete">Delete</button>
          </div>
@@ -70,12 +70,35 @@ booksList.addEventListener('click', (event) => {
          }
       } else if (button.textContent === 'Edit') {
          document.querySelector('#titleEdit').value = myLibrary[card.id].title;
-         // popupEditTitle.value = myLibrary[card.id].author;
+         document.querySelector('#authorEdit').value = myLibrary[card.id].author;
+         document.querySelector('#pagesEdit').value = myLibrary[card.id].pages;
+         document.querySelector('#readEdit').value = myLibrary[card.id].read;
+         togglePopup(popup);
+
+         
+      }
+
+      // Save Button
+      let saveBtn = document.querySelector('#saveBtn');
+      saveBtn.addEventListener('click', (e) => {
+         e.preventDefault();
+         console.log('clicked');
+         myLibrary[card.id].title = document.querySelector('#titleEdit').value;
+         myLibrary[card.id].author = document.querySelector('#authorEdit').value;
+         myLibrary[card.id].pages = document.querySelector('#pagesEdit').value;
+         myLibrary[card.id].read = document.querySelector('#readEdit').value;
+
+         document.querySelector('#cardTitle').innerText = myLibrary[card.id].title;
+         document.querySelector('#cardAuthor').innerText = myLibrary[card.id].author;
+         document.querySelector('#cardPages').innerText = myLibrary[card.id].pages;
+         document.querySelector('#cardStatus').innerText = myLibrary[card.id].read;
          
          togglePopup(popup);
-      }
+      })
    }
 })
+
+
 
 
 
