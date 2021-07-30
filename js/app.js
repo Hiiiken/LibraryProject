@@ -27,6 +27,7 @@ bookForm.addEventListener('submit', function(e) {
    addBookToLibrary();
    clearForm();
    render();
+   libraryLog();
 })
 
 // Function to clear the form after clicking the 'New Book'
@@ -66,7 +67,8 @@ booksList.addEventListener('click', (event) => {
       if (button.textContent === 'Delete') {
          if (confirm('Are you sure you want to delete this book?') === true) {
             booksList.removeChild(card.parentNode);
-            myLibrary.splice(card.id, 1)
+            myLibrary.splice(card.id, 1);
+            libraryLog();
          }
       } else if (button.textContent === 'Edit') {
          document.querySelector('#titleEdit').value = myLibrary[card.id].title;
@@ -74,8 +76,6 @@ booksList.addEventListener('click', (event) => {
          document.querySelector('#pagesEdit').value = myLibrary[card.id].pages;
          document.querySelector('#readEdit').value = myLibrary[card.id].read;
          togglePopup(popup);
-
-         
       }
 
       // Save Button
@@ -94,15 +94,13 @@ booksList.addEventListener('click', (event) => {
          document.querySelector('#cardStatus').innerText = myLibrary[card.id].read;
          
          togglePopup(popup);
+         libraryLog();
       })
    }
 })
 
 
-
-
-
-// Popups
+// Popup
 const openPopupButtons = document.querySelectorAll('[data-popup-target]');
 const closePopupButtons = document.querySelectorAll('[data-close-popup]');
 
@@ -123,4 +121,21 @@ closePopupButtons.forEach(button => {
 function togglePopup(popup) {
    if (popup == null) return;
    popup.classList.toggle('active');
+}
+
+
+// Library Log
+function libraryLog() {
+   const libraryLogTotalBooks = document.querySelector('#library-log--total');
+   libraryLogTotalBooks.innerText = myLibrary.length;
+   let countRead = 0;
+   myLibrary.forEach((book) => {
+      if (book.read === 'Read') {
+         countRead++;
+      }
+   })
+   const libraryLogReadBooks = document.querySelector('#library-log--read');
+   libraryLogReadBooks.innerText = countRead; 
+   const libraryLogNotReadBooks = document.querySelector('#library-log--notread');
+   libraryLogNotReadBooks.innerText = myLibrary.length - countRead; 
 }
