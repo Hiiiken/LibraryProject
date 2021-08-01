@@ -350,7 +350,7 @@ select {
   color: #000;
   font-weight: 500; }
 
-button[type=submit] {
+button[type=submit], button[type=button] {
   width: 100%;
   height: 46px;
   border: none;
@@ -361,7 +361,7 @@ button[type=submit] {
   font-weight: 600;
   background-color: #03b5e6;
   transition: .3s all; }
-  button[type=submit]:hover {
+  button[type=submit]:hover, button[type=button]:hover {
     background-color: #00a3d0;
     cursor: pointer; }
 
